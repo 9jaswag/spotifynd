@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SearchComponent } from './search/search.component';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SpotifyService } from 'app/spotify.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     RouterModule,
     AppRouting
   ],
-  providers: [],
+  providers: [SpotifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

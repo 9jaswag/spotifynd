@@ -1,3 +1,4 @@
+import { SpotifyService } from '../spotify.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  searchStr: string;
 
-  constructor() { }
+  constructor(private _spotifyService: SpotifyService) { }
 
   ngOnInit() {
+  }
+  searchMusic() {
+    this._spotifyService.searchMusic(this.searchStr);
   }
 
 }
