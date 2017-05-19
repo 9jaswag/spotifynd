@@ -8,13 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   searchStr: string;
+  searchRes;
 
   constructor(private _spotifyService: SpotifyService) { }
 
   ngOnInit() {
   }
   searchMusic() {
-    this._spotifyService.searchMusic(this.searchStr);
+    this._spotifyService.searchMusic(this.searchStr)
+      .subscribe( res => {
+        this.searchRes = res.artists.items;
+      });
+      this.setSearchRes(this.searchRes);
+  }
+  setSearchRes(str: string) {
+    this._spotifyService.setSearchRes(str);
   }
 
 }
