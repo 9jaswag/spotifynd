@@ -1,3 +1,6 @@
-<p>
-  search works!
-</p>
+<app-navbar (artistData) = 'getArtistData($event)' ></app-navbar>
+<div *ngIf="searchRes">
+  <div class="container" *ngFor='let res of searchRes'>
+    <div class="well">{{ res.name}}</div>
+  </div>
+</div>

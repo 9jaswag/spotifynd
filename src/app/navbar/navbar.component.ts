@@ -1,5 +1,5 @@
 import { SpotifyService } from '../spotify.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   searchStr: string;
   searchRes;
+  @Output() artistData = new EventEmitter();
 
   constructor(private _spotifyService: SpotifyService) { }
 
@@ -19,7 +20,8 @@ export class NavbarComponent implements OnInit {
       .subscribe( res => {
         this.searchRes = res.artists.items;
       });
-      this.setSearchRes(this.searchRes);
+      // this.setSearchRes(this.searchRes);
+      this.artistData.emit(this.searchRes);
   }
   setSearchRes(str: string) {
     this._spotifyService.setSearchRes(str);
