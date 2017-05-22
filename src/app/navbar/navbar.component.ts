@@ -16,15 +16,13 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
   searchMusic() {
-    this._spotifyService.searchMusic(this.searchStr)
+    if (this.searchStr) {
+      this._spotifyService.searchMusic(this.searchStr)
       .subscribe( res => {
         this.searchRes = res.artists.items;
+        this.artistData.emit(this.searchRes);
       });
-      // this.setSearchRes(this.searchRes);
-      this.artistData.emit(this.searchRes);
-  }
-  setSearchRes(str: string) {
-    this._spotifyService.setSearchRes(str);
+    }
   }
 
 }

@@ -4,7 +4,6 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class SpotifyService {
-  searchRes: string;
 
   private _searchUrl: string;
 
@@ -15,11 +14,6 @@ export class SpotifyService {
     console.log(this._searchUrl);
     return this._http.get(this._searchUrl)
       .map(res => res.json());
-  }
-
-  setSearchRes(str: string) {
-    this.searchRes = str;
-    console.log(this.searchRes);
   }
 
 }
