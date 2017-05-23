@@ -1,0 +1,4 @@
+.album .well{
+    overflow: auto;
+    min-height: 500px;
+}

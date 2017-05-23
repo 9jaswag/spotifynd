@@ -1,12 +1,30 @@
 <div class="container-fluid" *ngIf='artist'>
   <div class="container">
-    <div *ngIf='artist.images.length > 0'>
-      <div class="col-md-6 col-sm-6 col-xs-6">
-        <img src="{{artist.images[0].url}}" alt="" class="img-responsive thumbnail">
-      </div>
-      <div class="col-md-6 col-sm-6 col-xs-6">
-        <h3>{{artist.name}}</h3>
-      </div>      
+    <div class="col-md-3 col-sm-4 col-xs-6" *ngIf='artist.images.length > 0'>
+      <img src="{{artist.images[0].url}}" alt="" class="img-responsive thumbnail">
     </div>
-  </div>
+    <div class="col-md-9 col-sm-8 col-xs-6">
+        <h3>{{artist.name}}</h3>
+          <div *ngIf= 'artist.genres.length > 0'>
+          <strong><em>Genre:</em></strong> <span *ngFor='let genre of artist.genres'>{{genre}}; </span>
+          </div>
+          <div *ngIf ='albums'>
+            <strong><em>Number Of Albums:</em></strong> <span>{{albums.length}}</span>
+          </div>
+    </div>
+  </div>  
+  <hr>
+  <div class="container">
+      <div *ngFor ='let album of albums'>
+        <div class="col-md-3 col-sm-3 col-3">
+          <div class="album well">
+            <div *ngIf ='album.images.length > 0'>
+              <img src="{{album.images[0].url}}" alt="" class="img-thumbnail">
+              <h4>{{album.name}}</h4>
+              <a class="btn btn-primary btn-block">Album Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
