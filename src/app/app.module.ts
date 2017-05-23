@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SpotifyService } from 'app/spotify.service';
 import { ArtistComponent } from './artist/artist.component';
+import { AlbumComponent } from './album/album.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ArtistComponent } from './artist/artist.component';
     SearchComponent,
     AboutComponent,
     NotFoundComponent,
-    ArtistComponent
+    ArtistComponent,
+    AlbumComponent
   ],
   imports: [
     BrowserModule,
