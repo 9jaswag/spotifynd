@@ -1,4 +1,8 @@
-.album .well{
+.album.well{
     overflow: auto;
-    min-height: 500px !important;
+    min-height: 350px !important;
+}
+
+.album-art{
+    width: 100%;
 }

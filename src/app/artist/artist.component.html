@@ -9,7 +9,7 @@
           <strong><em>Genre:</em></strong> <span *ngFor='let genre of artist.genres'>{{genre}}; </span>
           </div>
           <div *ngIf ='albums'>
-            <strong><em>Number Of Albums on Spotify:</em></strong> <span>{{albums.length}}</span>
+            <strong><em>Number Of Spotify Albums:</em></strong> <span>{{albums.length}}</span>
           </div>
     </div>
   </div>  
@@ -19,8 +19,8 @@
         <div class="col-md-3 col-sm-3 col-3">
           <div class="album well">
             <div *ngIf ='album.images.length > 0'>
-              <img src="{{album.images[0].url}}" alt="" class="img-thumbnail">
-              <h4>{{album.name}}</h4>
+              <img src="{{album.images[0].url}}" alt="" class="img-thumbnail album-art">
+              <h5>{{album.name}}</h5>
               <a [routerLink] ="['/album', album.id]" class="btn btn-primary btn-block">Album Details</a>
             </div>
           </div>
