@@ -1,4 +1,10 @@
 <app-navbar (artistData) = 'getArtistData($event)' ></app-navbar>
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1 class="text-center">Need To Find That Music?</h1>
+    <h2 class="text-center">Spotifynd it!</h2>
+  </div>
+</div>
 <div *ngIf="searchRes">
   <div class="container" *ngFor='let res of searchRes'>
     <div class="well">

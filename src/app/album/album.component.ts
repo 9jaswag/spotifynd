@@ -20,4 +20,8 @@ export class AlbumComponent implements OnInit {
       .subscribe( album => this.album = album);
   }
 
+  goBack() {
+    window.history.back();
+  }
+
 }

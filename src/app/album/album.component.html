@@ -11,6 +11,7 @@
     <h4>Album Type: {{album.album_type}}</h4>
     <h4>Release Date: {{album.release_date}}</h4>
     <a href="{{album.external_urls.spotify}}" class="btn btn-primary" target="_blank">View On Spotify</a>
+    <button class="btn btn-default glyphicon glyphicon-chevron-left block" (click) = goBack()>Back</button>
   </div>
   <hr>
   <div class="col-md-12 col-sm-12 col-xs-12">
@@ -18,7 +19,7 @@
     <div *ngFor ='let track of album.tracks.items'>
       <div class="well">
         <h4>{{track.track_number}} - {{track.name}}</h4>
-        <a *ngIf='track.preview_url' href="{{track.preview_url}}" target="_blank" class="btn btn-primary">Preview Track</a>
+        <a *ngIf='track.preview_url' href="{{track.preview_url}}" target="_blank" class="btn btn-primary">Preview Track <span class="glyphicon glyphicon-play-circle space-left"></span></a>
       </div>
     </div>
   </div>
