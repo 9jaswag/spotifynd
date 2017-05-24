@@ -10,6 +10,7 @@ export class NavbarComponent implements OnInit {
   searchStr: string;
   searchRes;
   @Output() artistData = new EventEmitter();
+  @Output() strlen = new EventEmitter();
 
   constructor(private _spotifyService: SpotifyService) { }
 
@@ -21,6 +22,7 @@ export class NavbarComponent implements OnInit {
       .subscribe( res => {
         this.searchRes = res.artists.items;
         this.artistData.emit(this.searchRes);
+        this.strlen.emit(this.searchStr.length);
       });
     }
   }

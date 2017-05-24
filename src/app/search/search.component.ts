@@ -20,4 +20,9 @@ export class SearchComponent implements OnInit {
     console.log(this.searchRes);
   }
 
+  getStrlen(event) {
+    const jumbo = document.querySelector('.jumbotron');
+    return event ? jumbo.classList.add('hide') : jumbo.classList.remove('hide');
+  }
+
 }
