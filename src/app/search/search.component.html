@@ -1,8 +1,9 @@
 <app-navbar (artistData) = 'getArtistData($event)' ></app-navbar>
 <div class="container-fluid">
-  <div class="jumbotron">
-    <h1 class="text-center">Need To Find That Music?</h1>
-    <h2 class="text-center">Spotifynd it!</h2>
+  <div class="jumbotron text-center">
+    <h1>Need To Find That Music?</h1>
+    <h2>Spotifynd it!</h2>
+    <p class="hidden-lg hidden-md hidden-sm">Toggle the menu above to search</p>
   </div>
 </div>
 <div *ngIf="searchRes">
