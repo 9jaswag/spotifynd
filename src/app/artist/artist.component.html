@@ -9,7 +9,8 @@
           <strong><em>Genre:</em></strong> <span *ngFor='let genre of artist.genres'>{{genre}}; </span>
           </div>
           <div *ngIf ='albums'>
-            <strong><em>Number Of Spotify Albums:</em></strong> <span>{{albums.length}}</span>
+            <strong><em>Number Of Spotify Albums:</em></strong> <span>{{albums.length}}</span> <br> <br>
+            <a href="/" class="btn btn-primary"><span class="glyphicon glyphicon-home" style="margin-right: 0.5rem;"></span>Home</a>
           </div>
     </div>
   </div>  
